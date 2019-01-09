@@ -1,0 +1,59 @@
+<div>
+    
+  <mat-toolbar >
+    <span class="fill-remaining-space"></span>
+    <span >Conferences</span>
+    <span class="fill-remaining-space"></span>
+  </mat-toolbar>
+<div style="margin-top: 25px;" class="container" >
+    <button mat-raised-button color="warn" style="float: right" (click)="Filter.value='';applyFilter('') ">Clear</button>
+    <div style="overflow: hidden; padding-right: .5em;">
+        <mat-form-field style="overflow: hidden; padding-right: .5em;" >
+            <input matInput #Filter (keyup)="applyFilter($event.target.value)" style="width: 100%;" placeholder="Filter">
+          </mat-form-field>
+    </div>​
+</div>
+  
+</div>
+
+<div class="mat-elevation-z6 container" style="margin-bottom: 25px;">
+  <table #table mat-table [dataSource]="dataSource"  >
+  
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+  
+  <!-- Position Column -->
+  <ng-container matColumnDef="Hashtags">
+    <th mat-header-cell *matHeaderCellDef> Mot Clé </th>
+    <td mat-cell *matCellDef="let element"> {{element.Hashtags}} </td>
+  </ng-container>
+  
+  <!-- Name Column -->
+  <ng-container matColumnDef="location">
+    <th mat-header-cell *matHeaderCellDef> Lieu </th>
+    <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+  </ng-container>
+  
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef> Date </th>
+    <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+  </ng-container>
+  
+  <!-- Weight Column -->
+  <ng-container matColumnDef="Personnes">
+    <th mat-header-cell *matHeaderCellDef> Personne </th>
+    <td mat-cell *matCellDef="let element"> {{element.Personnes}} </td>
+  </ng-container>
+  
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="text">
+    <th mat-header-cell *matHeaderCellDef> Texte </th>
+    <td mat-cell *matCellDef="let element"> {{element.text}} </td>
+  </ng-container>
+  
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator #paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+  

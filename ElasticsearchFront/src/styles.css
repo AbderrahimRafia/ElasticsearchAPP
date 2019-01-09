@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+table {
+    width: 100%;
+  }
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  div.container{
+    margin: 0px 40px;
+}
+
+.fill-remaining-space{
+    flex: 1 1 auto;
+}
+.textarea {
+  width: 100px;
+}
+.example-full-width {
+  width: 100%;
+}
+.docs-primary-header {
+  background: #e91e63;
+  color: white;
+}
+
+.text{
+  
+  background: #303030;
+}
+.top {
+  margin-top: 25px;
+}
